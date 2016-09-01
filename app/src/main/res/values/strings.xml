@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Agendame</string>
+    <string name="login_toolbar_titulo">Inicio de sesión</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="version">Version 1.0</string>
+    <string name="autoria">Desarrollada por \n\t José Jesús Guzmán Eusebio</string>
+    <string name="descripcion1">Aplicación Android para certificación en la plataforma impartida por IT OK centerm</string>
+    <string name="decripcion2">App que muestra información de los cursos de certificación, facilita la inscripción a estos y notifica la proximidad y disponibilidad de los mismos.</string>
+    <string name="Si">ACEPTAR</string>
+    <string name="No">CANCELAR</string>
+    <string name="acerca_dialog_titulo">¿Desea ir a GItHub?</string>
+    <string name="acerca_dialog_mensaje">Permitir a la aplicación abrir el repositorio de GitHub que contiene el codigo de este proyecto.</string>
 </resources>
