@@ -1,4 +1,4 @@
-package com.example.jose_jesus_guzman.agendame.Activities;
+package com.example.jose_jesus_guzman.agendame.Activities.Views;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,7 +27,7 @@ public class AcercaActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.floating);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
