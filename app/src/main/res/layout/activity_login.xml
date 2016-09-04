@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:fitsSystemWindows="true"
-tools:context=".Activities.Views.LoginActivity">
+tools:context=".Activities.Views.ClasesViews.LoginActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -54,6 +54,7 @@ tools:context=".Activities.Views.LoginActivity">
             android:orientation="vertical">
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/login_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

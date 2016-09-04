@@ -1,4 +1,4 @@
-package com.example.jose_jesus_guzman.agendame.Activities.Views;
+package com.example.jose_jesus_guzman.agendame.Activities.Views.ClasesViews;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Usado para cambiar el color de los botones del action bar a blanco
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
         getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
 
@@ -35,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        //Al presionar acerca de en el menu contextual se dirigira a una nueva activity
         if (item.getItemId() == R.id.action_acerca) {
             startActivity(new Intent(LoginActivity.this, AcercaActivity.class));
         }

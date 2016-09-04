@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:fitsSystemWindows="true"
-    tools:context=".Activities.Views.AcercaActivity">
+    tools:context=".Activities.Views.ClasesViews.AcercaActivity">
 
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"

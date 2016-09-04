@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/card_img"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/android" />
+
+        <TextView
+            android:id="@+id/card_txt_titulo"
+            style="@style/txt_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titulo de mi tarjeta" />
+
+        <TextView
+            android:id="@+id/card_txt_fecha"
+            style="@style/txt_descrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripcion de mi tarjeta" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/card_btn_estado"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:text="Proximamente" />
+
+            <Button
+                android:id="@+id/card_btn_"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/ver_mas" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

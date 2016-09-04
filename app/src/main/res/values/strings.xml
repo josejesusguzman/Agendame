@@ -10,4 +10,13 @@
     <string name="No">CANCELAR</string>
     <string name="acerca_dialog_titulo">¿Desea ir a GItHub?</string>
     <string name="acerca_dialog_mensaje">Permitir a la aplicación abrir el repositorio de GitHub que contiene el codigo de este proyecto.</string>
+    <string name="ver_mas">Ver más</string>
+
+
+    <string name="estamos_ubicados_titulo">Estamos ubicados en:</string>
+    <string name="estamos_ubicados_cuerpo">Una de las mejores zonas de la Ciudad de México, en donde la facilidad de servicios de transporte es excelente, existe transporte público terrestre y subterráneo muy cercano a nuestras instalaciones.\n
+        Calle Tecamachalco No.54B, Colonia Lomas de Chapultepec Delegación Miguel Hidalgo,\n
+        C.P. 11000\n
+        Estamos cerca de las estaciones del metro San Joaquín, Polanco, Auditorio.</string>
+
 </resources>

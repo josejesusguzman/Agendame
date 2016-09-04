@@ -1,4 +1,4 @@
-package com.example.jose_jesus_guzman.agendame.Activities.Views;
+package com.example.jose_jesus_guzman.agendame.Activities.Views.ClasesViews;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,18 +25,20 @@ public class AcercaActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Poner boton de atras en el action bar
 
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Un dialogo para validar si el usuario quiere ir al link de github o no
                 new AlertDialog.Builder(AcercaActivity.this)
                         .setTitle(getResources().getString(R.string.acerca_dialog_titulo))
                         .setMessage(getResources().getString(R.string.acerca_dialog_mensaje))
                         .setPositiveButton(getResources().getString(R.string.Si), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                //Pone la aplicacion en segundo plano y se dirije al repositorio de la app
                                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/jose1824/Agendame.git"));
                                 startActivity(browserIntent);
                                 dialogInterface.dismiss();
@@ -45,6 +47,7 @@ public class AcercaActivity extends AppCompatActivity {
                         .setNegativeButton(getResources().getString(R.string.No), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                //Cierra el dialogo
                                 dialogInterface.dismiss();
                             }
                         })
@@ -57,6 +60,7 @@ public class AcercaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        //Ir a la activity principal
         startActivity(new Intent(AcercaActivity.this, LoginActivity.class));
         return super.onOptionsItemSelected(item);
     }
