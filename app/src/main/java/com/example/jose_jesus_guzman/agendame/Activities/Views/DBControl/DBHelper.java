@@ -84,6 +84,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        System.out.println(create);
         db.execSQL(create);
     }
 

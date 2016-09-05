@@ -11,7 +11,13 @@
     <string name="acerca_dialog_titulo">¿Desea ir a GItHub?</string>
     <string name="acerca_dialog_mensaje">Permitir a la aplicación abrir el repositorio de GitHub que contiene el codigo de este proyecto.</string>
     <string name="ver_mas">Ver más</string>
+    <string name="login_dialog_mensaje">Para una mayor comodidad, en la lista podra ver más información del curso o inscribirse de inmediato a el (Solo si el curso esta disponible)</string>
 
+    <string name="web">Fundamentos del Diseño Web</string>
+    <string name="movil">Programación de aplicaciones móviles utilizando Android</string>
+    <string name="linux">Linux Administrator</string>
+    <string name="js">JavaScript con jQuery para móviles</string>
+    <string name="mysql">Desarrollo de base de datos con MySQL</string>
 
     <string name="estamos_ubicados_titulo">Estamos ubicados en:</string>
     <string name="estamos_ubicados_cuerpo">Una de las mejores zonas de la Ciudad de México, en donde la facilidad de servicios de transporte es excelente, existe transporte público terrestre y subterráneo muy cercano a nuestras instalaciones.\n
