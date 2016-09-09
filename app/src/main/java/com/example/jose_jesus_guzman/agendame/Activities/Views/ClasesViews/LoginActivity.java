@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.Adapters.RecyclerAdapter;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.Curso;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.CursoCompleto;
+import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.Negocio;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.DBControl.DBController;
 import com.example.jose_jesus_guzman.agendame.R;
 
@@ -97,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
 
             CursoCompleto cursoCompletoWeb = new CursoCompleto(getResources().getString(R.string.web), //Nombre
-                    19, //dia inicio
+                    12, //dia inicio //CAMBIO AQUI
                     9, //mes inicio
                     2016, //año inicio
                     23, //dia fin
@@ -248,8 +249,12 @@ public class LoginActivity extends AppCompatActivity {
     private void crearLista(DBController dbController){
         Cursor cursor = dbController.getData();
         String fechaCompeta = "";
+
+        Negocio negocio = new Negocio(LoginActivity.this);
+
         if (cursor.moveToFirst()) {
             do {
+                int idCurso = cursor.getInt(0);
                 String nombre = cursor.getString(1);
                 int diaInicio = cursor.getInt(2);
                 int mesInicio = cursor.getInt(3);
@@ -257,88 +262,17 @@ public class LoginActivity extends AppCompatActivity {
                 int diaFin = cursor.getInt(5);
                 int mesFin = cursor.getInt(6);
                 int anioFin = cursor.getInt(7);
-                fechaCompeta = "Inicio: " + convertirNumero(diaInicio) + " de "
-                        + convertirMes(mesInicio) + " del " + anioInicio + "\n" +
-                        "Fin: " + convertirNumero(diaFin) + " de "
-                        + convertirMes(mesFin) + " del " + anioFin;
+                fechaCompeta = "Inicio: " + negocio.convertirNumero(diaInicio) + " de "
+                        + negocio.convertirMes(mesInicio) + " del " + anioInicio + "\n" +
+                        "Fin: " + negocio.convertirNumero(diaFin) + " de "
+                        + negocio.convertirMes(mesFin) + " del " + anioFin;
 
-                cursoList.add(new Curso(nombre, fechaCompeta, "Proximamente",  ponerImagen(nombre)));
+                cursoList.add(new Curso(nombre, fechaCompeta, negocio.obtenerEstado(diaInicio, mesInicio),  negocio.ponerImagen(nombre)));
                 recyclerAdapter.notifyDataSetChanged();
             } while (cursor.moveToNext());
         }
     }
 
-    private String convertirNumero(int numero) {
-        String num = "";
-        if(numero < 10) {
-            num = "0" + numero;
-        } else {
-            num = "" + numero;
-        }
-        return num;
-    }
 
-    private String convertirMes(int mes) {
-        String mesLetra = "";
-        switch (mes){
-            case 1:
-                mesLetra = "enero";
-                break;
-            case 2:
-                mesLetra = "febrero";
-                break;
-            case 3:
-                mesLetra = "marzo";
-                break;
-            case 4:
-                mesLetra = "abril";
-                break;
-            case 5:
-                mesLetra = "mayo";
-                break;
-            case 6:
-                mesLetra = "junio";
-                break;
-            case 7:
-                mesLetra = "julio";
-                break;
-            case 8:
-                mesLetra = "agosto";
-                break;
-            case 9:
-                mesLetra = "septiembre";
-                break;
-            case 10:
-                mesLetra = "octubre";
-                break;
-            case 11:
-                mesLetra = "noviembre";
-                break;
-            case 12:
-                mesLetra = "diciembre";
-                break;
-            default:
-                return null;
-        }
-        return mesLetra;
-    }
-
-    private int ponerImagen(String curso){
-        int imagen = 0;
-
-        if (curso.equals(getResources().getString(R.string.web))) {
-            imagen = R.drawable.web;
-        } else if (curso.equals(getResources().getString(R.string.movil))) {
-            imagen = R.drawable.android;
-        } else if (curso.equals(getResources().getString(R.string.js))) {
-            imagen = R.drawable.js;
-        } else if (curso.equals(getResources().getString(R.string.linux))) {
-            imagen = R.drawable.linux;
-        } else if (curso.equals(getResources().getString(R.string.mysql))) {
-            imagen = R.drawable.mysql;
-        }
-
-        return imagen;
-    }
 
 }

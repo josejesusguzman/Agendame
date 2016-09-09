@@ -18,6 +18,8 @@
     <string name="linux">Linux Administrator</string>
     <string name="js">JavaScript con jQuery para móviles</string>
     <string name="mysql">Desarrollo de base de datos con MySQL</string>
+    <string name="inscribirse">Inscribirse</string>
+    <string name="proximamente">Proximamente</string>
 
     <string name="estamos_ubicados_titulo">Estamos ubicados en:</string>
     <string name="estamos_ubicados_cuerpo">Una de las mejores zonas de la Ciudad de México, en donde la facilidad de servicios de transporte es excelente, existe transporte público terrestre y subterráneo muy cercano a nuestras instalaciones.\n
