@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.Curso;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.CursoCompleto;
 
 /**
@@ -109,6 +110,14 @@ public class DBController {
         return cursor;
     }
 
+    public Cursor getDataById(int idCurso){
+        Cursor cursor = db.rawQuery("SELECT * FROM " + dbHelper.TABLE_NAME +
+                " WHERE " + dbHelper._ID_CURSO + "=" + idCurso + ";", null);
 
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        return cursor;
+    }
 
 }

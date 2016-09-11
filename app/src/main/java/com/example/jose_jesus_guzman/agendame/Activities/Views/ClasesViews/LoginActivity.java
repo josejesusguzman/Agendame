@@ -22,6 +22,7 @@ import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.Curso;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.CursoCompleto;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.Negocio;
 import com.example.jose_jesus_guzman.agendame.Activities.Views.DBControl.DBController;
+import com.example.jose_jesus_guzman.agendame.Activities.Views.Services.ServicioVinculado;
 import com.example.jose_jesus_guzman.agendame.R;
 
 import java.util.ArrayList;
@@ -60,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
 
         dbController.close();//Cerrar la BD
 
+        startService(new Intent(getApplicationContext(), ServicioVinculado.class));
+
     }
 
     @Override
@@ -91,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void llenadoDatos(DBController dbController){
+    public void llenadoDatos(DBController dbController){
         SharedPreferences pref = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         if (pref.getBoolean("valor", false)) {
             return;
@@ -267,7 +270,11 @@ public class LoginActivity extends AppCompatActivity {
                         "Fin: " + negocio.convertirNumero(diaFin) + " de "
                         + negocio.convertirMes(mesFin) + " del " + anioFin;
 
-                cursoList.add(new Curso(nombre, fechaCompeta, negocio.obtenerEstado(diaInicio, mesInicio),  negocio.ponerImagen(nombre)));
+                cursoList.add(new Curso(idCurso,nombre, fechaCompeta,
+                        negocio.obtenerEstado(diaInicio, mesInicio)
+                                ? getResources().getString(R.string.inscribirse)
+                                : getResources().getString(R.string.proximamente),
+                        negocio.ponerImagen(nombre)));
                 recyclerAdapter.notifyDataSetChanged();
             } while (cursor.moveToNext());
         }

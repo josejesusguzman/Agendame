@@ -5,16 +5,22 @@ package com.example.jose_jesus_guzman.agendame.Activities.Views.Clases;
  */
 public class Curso {
 
+    private int id;
     private String nombre;
     private String fecha; // DD/MM/AAAA
     private String estado; //inscribirse o Proximamente
     private int img; //Imagen a elegir
 
-    public Curso(String nombre, String fecha, String estado, int img) {
+    public Curso(int id, String nombre, String fecha, String estado, int img) {
+        this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
         this.estado = estado;
         this.img = img;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {

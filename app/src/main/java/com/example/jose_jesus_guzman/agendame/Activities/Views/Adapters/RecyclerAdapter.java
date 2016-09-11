@@ -51,7 +51,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         holder.btnVerMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, DetalleActivity.class));
+                Intent intent = new Intent(context, DetalleActivity.class);
+                intent.putExtra("idCurso", curso.get(position).getId());
+                intent.putExtra("idImagen", curso.get(position).getImg());
+                context.startActivity(intent);
             }
         });
         holder.btnEstado.setOnClickListener(new View.OnClickListener() {

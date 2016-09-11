@@ -25,6 +25,7 @@ public class AcercaActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getString(R.string.acerca_de));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Poner boton de atras en el action bar
 
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);

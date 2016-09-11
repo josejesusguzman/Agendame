@@ -3,6 +3,8 @@ package com.example.jose_jesus_guzman.agendame.Activities.Views.Clases;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 import com.example.jose_jesus_guzman.agendame.R;
@@ -94,8 +96,8 @@ public class Negocio {
     }
 
     //Siete dias antes de la fecha de inicio, el usuario ya se puede inscribir
-    public String obtenerEstado(int dia, int mes){
-        String estado = null;
+    public boolean obtenerEstado(int dia, int mes){
+        boolean estado = false;
 
         //Obtener la fecha actual del dispositivo
         Calendar calander = Calendar.getInstance();
@@ -109,10 +111,10 @@ public class Negocio {
                     : obtenerStringEstado(mes - 1, cDay, false); //Si el año es normal
         } else {
             if (cDay >= (dia - 7) && cDay < dia && cMonth == mes) { //Si esta entre el dia anterior de inicio de curso y 7 dias anteriores
-                estado = "Inscribirse";
+                estado = true;
                 lanzarNotificacion("Fundamentos de diseño Web"); //TODO recibir el nombre del curso y el id
             } else {
-                estado = "Proximamente";
+                estado = false;
             }
         }
 
@@ -125,8 +127,8 @@ public class Negocio {
     * isBiciesto: si el año es biciesto o no
     *
      */
-    private String obtenerStringEstado(int mes, int cDay, boolean isBiciesto) {
-        String estado = null;
+    private boolean obtenerStringEstado(int mes, int cDay, boolean isBiciesto) {
+        boolean estado = false; //TRUE: inscribirse //FALSE: proximamente
         if (mes == 0 //Diciembre del año anterior
                 ||mes == 1 //Si los meses tienen 31 dias
                 || mes == 3
@@ -136,41 +138,44 @@ public class Negocio {
                 || mes == 10
                 || mes == 12){
             if (cDay >= 25 && cDay <= 31) { //Si se encuentran dentro de esos 31 dias
-                estado = "Inscribirse";
+                estado = true;
             } else {
-                estado = "Proximamente";
+                estado = false;
             }
         } else if (mes == 4 //Si el mes tiene 30 dias
                 || mes == 9
                 || mes == 11) {
             if (cDay >= 24 && cDay <= 30) { //Si se encuentran dentro de esos 30 dias
-                estado = "Inscribirse";
+                estado = true;
             } else {
-                estado = "Proximamente";
+                estado = false;
             }
         } else if (mes == 2) { //si es en febrero el curso
             if (isBiciesto){ //Si es biciesto
                 if (cDay >= 23 && cDay <= 29) { //Si se encuentran dentro de esos 31 dias
-                    estado = "Inscribirse";
+                    estado = true;
                 } else {
-                    estado = "Proximamente";
+                    estado = false;
                 }
             } else { //Si no es biciesto el año
                 if (cDay >= 22 && cDay <= 28) { //Si se encuentran dentro de esos 31 dias
-                    estado = "Inscribirse";
+                    estado = true;
                 } else {
-                    estado = "Proximamente";
+                    estado = false;
                 }
             }
         }
         return estado;
     }
 
-    private void lanzarNotificacion(String curso){
+    //TODO implementar servicio con asyncTask y que se ejecute al principio la aplicacion
+    public void lanzarNotificacion(String curso){
         int notificationId = 1;
+        Uri notifySound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION); //Sonido
 
         NotificationCompat.Builder notificationCompat = new NotificationCompat.Builder(context)
                 .setSmallIcon(R.mipmap.ic_launcher)
+                .setSound(notifySound)
                 .setLights(Color.GREEN, 3000, 3000) //Led
                 .setVibrate(new long[] {1000, 1000, 1000, 1000, 1000})
                 .setContentTitle(context.getResources().getString(R.string.app_name))
