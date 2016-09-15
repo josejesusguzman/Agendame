@@ -15,7 +15,7 @@ import com.example.jose_jesus_guzman.agendame.Activities.Views.Clases.Negocio;
 public class ServicioVinculado extends Service {
 
     ClaseAsincrona claseAsincrona;
-    private boolean servicioCorriendo;
+    private boolean mRunning;
 
     @Nullable
     @Override
@@ -23,22 +23,33 @@ public class ServicioVinculado extends Service {
         return null;
     }
 
+
     @Override
     public void onCreate() {
         super.onCreate();
-        claseAsincrona = new ClaseAsincrona();
-        servicioCorriendo = true;
+        mRunning = false;
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        claseAsincrona.execute();
+        if (!mRunning) {
+            mRunning = true;
+            claseAsincrona = new ClaseAsincrona();
+            claseAsincrona.execute();
+        }
+
         return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        claseAsincrona = null;
     }
 
     private class ClaseAsincrona extends AsyncTask<String, String, String> {
 
-        private final static int INTERVALO = 1000 *30; //Cada 30 segundos
+        private final static int INTERVALO = 1000 * 60 * 60 * 24; //Cada 30 segundos
         private boolean mostrando;
 
         @Override
@@ -65,6 +76,11 @@ public class ServicioVinculado extends Service {
             super.onProgressUpdate(values);
             Negocio negocio = new Negocio(getApplicationContext());
             negocio.lanzarNotificacion(values[0]);
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
         }
     }
 

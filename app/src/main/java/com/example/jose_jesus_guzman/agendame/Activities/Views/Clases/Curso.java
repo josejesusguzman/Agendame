@@ -4,6 +4,7 @@ package com.example.jose_jesus_guzman.agendame.Activities.Views.Clases;
  * Created by jesus on 4/09/16.
  */
 public class Curso {
+    //Este modelo se contruye para poder poblar el Recycler View
 
     private int id;
     private String nombre;
@@ -16,7 +17,7 @@ public class Curso {
         this.nombre = nombre;
         this.fecha = fecha;
         this.estado = estado;
-        this.img = img;
+        this.img = img; //Recibe el ID de la imagen en la carpeta Drawables segun el curso en cuestion.
     }
 
     public int getId() {

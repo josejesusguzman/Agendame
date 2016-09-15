@@ -4,6 +4,7 @@ package com.example.jose_jesus_guzman.agendame.Activities.Views.Clases;
  * Created by jesus on 4/09/16.
  */
 public class CursoCompleto {
+    //Este modelo se construye para poder llenar la BD de una manera más facil.
 
     private String nombreCurso;
 

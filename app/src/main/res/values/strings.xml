@@ -21,10 +21,30 @@
     <string name="inscribirse">Inscribirse</string>
     <string name="proximamente">Proximamente</string>
 
+    <string name="facilidades">Ofrecemos facilidades de pago</string>
+    <string name="contado">Pago de contado</string>
+    <string name="cuotas">Pago a cuotas</string>
     <string name="estamos_ubicados_titulo">Estamos ubicados en:</string>
     <string name="estamos_ubicados_cuerpo">Una de las mejores zonas de la Ciudad de México, en donde la facilidad de servicios de transporte es excelente, existe transporte público terrestre y subterráneo muy cercano a nuestras instalaciones.\n
         Calle Tecamachalco No.54B, Colonia Lomas de Chapultepec Delegación Miguel Hidalgo,\n
         C.P. 11000\n
         Estamos cerca de las estaciones del metro San Joaquín, Polanco, Auditorio.</string>
+    <string name="conocmientos_demostrar">El participante demostrará conocimientos suficientes sobre:</string>
+    <string name="sistema_emmet">El manejo y operación del editor de texto con sistema EMMET</string>
+    <string name="HTML_CSS">HTML y CSS a nivel intermedio.</string>
+    <string name="prototipado">Maquetación y prototipado Web.</string>
+    <string name="sistemas_adaptativos">Sistemas Adaptativos para Web dirigidas a móviles</string>
+    <string name="prerrequisitos">Prerrequisitos del Curso:</string>
+    <string name="ofimatica">Nociones básicas de Ofimática.</string>
+    <string name="temario">Temario del curso</string>
+    <string name="historia_web">Historia de la web.</string>
+    <string name="funcionamiento_web">Funcionamiento de una página web.</string>
+    <string name="html5">HTML5.</string>
+    <string name="css3">CSS3.</string>
+    <string name="javascript">JavaScript.</string>
+    <string name="publicaciones_web">Publicaciones de una página web.</string>
+    <string name="cantidad_minima">*La apertura de los cursos depende de la cantidad mínima de</string>
+    <string name="iva">*Los precios no incluyen I.V.A.</string>
+
 
 </resources>

@@ -6,4 +6,5 @@
     <dimen name="activity_vertical_margin2">32dp</dimen>
     <dimen name="padding_fragments_tab">80dp</dimen>
     <dimen name="margin_card_buttons">8dp</dimen>
+    <dimen name="detalle_text_size">16sp</dimen>
 </resources>

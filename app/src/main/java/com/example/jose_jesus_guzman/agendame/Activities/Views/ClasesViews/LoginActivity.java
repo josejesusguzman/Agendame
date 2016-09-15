@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Con esta instancia se crea la BD si no existe y se comienza a usar
         DBController dbController = new DBController(this);
-        dbController.open();
+        dbController.open(); //abre la bd para que se pueda usar
         llenadoDatos(dbController);
 
         recyclerViewLista = (RecyclerView) findViewById(R.id.login_recycler);
@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
 
             CursoCompleto cursoCompletoWeb = new CursoCompleto(getResources().getString(R.string.web), //Nombre
-                    12, //dia inicio //CAMBIO AQUI
+                    19, //dia inicio //CAMBIO AQUI
                     9, //mes inicio
                     2016, //año inicio
                     23, //dia fin
@@ -129,11 +129,11 @@ public class LoginActivity extends AppCompatActivity {
             dbController.insetrarDatos(cursoCompletoWeb);
 
             CursoCompleto cursoCompletoAndroid = new CursoCompleto(getResources().getString(R.string.movil), //Nombre
-                    16, //dia inicio
-                    10, //mes inicio
+                    20, //dia inicio
+                    9, //mes inicio
                     2016, //año inicio
                     30, //dia fin
-                    10, //mes fin
+                    9, //mes fin
                     2016, //año fin
                     10, //hora inicio
                     0, //minutos inicio
@@ -148,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
                     10, //hora inicio sabado
                     0, //minutos inicio sabado
                     17, //hora fin sabado
-                    30, //minutos fin sabado
+                    0, //minutos fin sabado
                     1500, //costo
                     35, //duracion en horas
                     10); //minimos partificipantes
